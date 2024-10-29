@@ -185,7 +185,7 @@
             this.Controls.Add(this.lblCubeEdge);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
-            this.Text = "Обчислення площі куба та паралелепіпеда";
+            this.Text = "Лабораторна робота №6";
             this.ResumeLayout(false);
             this.PerformLayout();
 

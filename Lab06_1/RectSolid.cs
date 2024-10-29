@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace Lab06_1
 {
-    public class RectSolid : Solid
+    public class RectSolid : ISolid
     {
-        public double C; // Довжина основи
-        public double D; // Ширина основи
-        public double H; // Висота
+        private double length;
+        private double width;
+        private double height;
 
-        public RectSolid(double c, double d, double h)
+        public RectSolid(double length, double width, double height)
         {
-            C = c;
-            D = d;
-            H = h;
+            this.length = length;
+            this.width = width;
+            this.height = height;
         }
 
-        public override double GetSurfaceArea()
+        public double GetSurfaceArea()
         {
-            return 2 * (C * D + D * H + C * H); // Формула площі поверхні прямокутного паралелепіпеда
+            return 2 * (length * width + width * height + length * height);
         }
     }
 }

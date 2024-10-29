@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Lab06_1
 {
-    public class Cube : Solid
+    public class Cube : ISolid
     {
-        public double A;
+        private double edge;
 
-        public Cube(double a)
+        public Cube(double edge)
         {
-            A = a;
+            this.edge = edge;
         }
 
-        public override double GetSurfaceArea()
+        public double GetSurfaceArea()
         {
-            return 6 * Math.Pow(A, 2);
+            return 6 * Math.Pow(edge, 2);
         }
     }
 }

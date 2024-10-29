@@ -25,15 +25,17 @@ namespace Lab06_1
                 // Отримуємо довжину ребра куба
                 double A = Convert.ToDouble(txtCubeEdge.Text);
 
-                // Перевірка на від'ємне або нульове значення
                 if (A <= 0)
                 {
                     MessageBox.Show("Довжина ребра куба повинна бути більше 0.");
                     return;
                 }
 
-                // Обчислюємо площу куба (S = 6 * A^2)
-                double cubeSurfaceArea = 6 * Math.Pow(A, 2);
+                // Створюємо об'єкт типу Cube, який реалізує інтерфейс ISolid
+                ISolid cube = new Cube(A);
+
+                // Викликаємо метод GetSurfaceArea() через інтерфейс
+                double cubeSurfaceArea = cube.GetSurfaceArea();
 
                 // Виводимо результат
                 txtCubeAreaResult.Text = cubeSurfaceArea.ToString();
@@ -54,15 +56,17 @@ namespace Lab06_1
                 double D = Convert.ToDouble(txtParallelepipedWidth.Text);
                 double H = Convert.ToDouble(txtParallelepipedHeight.Text);
 
-                // Перевірка на від'ємні або нульові значення
                 if (C <= 0 || D <= 0 || H <= 0)
                 {
                     MessageBox.Show("Довжина, ширина та висота повинні бути більше 0.");
                     return;
                 }
 
-                // Обчислюємо площу прямокутного паралелепіпеда (S = 2 * (C * D + D * H + C * H))
-                double parallelepipedSurfaceArea = 2 * (C * D + D * H + C * H);
+                // Створюємо об'єкт типу RectSolid, який реалізує інтерфейс ISolid
+                ISolid rectSolid = new RectSolid(C, D, H);
+
+                // Викликаємо метод GetSurfaceArea() через інтерфейс
+                double parallelepipedSurfaceArea = rectSolid.GetSurfaceArea();
 
                 // Виводимо результат
                 txtParallelepipedAreaResult.Text = parallelepipedSurfaceArea.ToString();

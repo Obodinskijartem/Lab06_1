@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cube.cs" />
+    <Compile Include="ISolid.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
